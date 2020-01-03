@@ -1,24 +1,28 @@
 <template>
   <div id="app">
+    <v-home></v-home>
     <h1>{{msg}}</h1>
-    <button data-aid='123' @click="eventFn($event)" dataset="1">获取时间对象</button>
+    <v-news></v-news>
+
   </div>
 </template>
 
 <script>
+  // 引用组件
+  import Home from './components/Home.vue'
+  import News from './components/News.vue'
+
   export default {
     name: 'app',
     data() {
       return {
-        msg: 'hello world',
-        list: []
+        msg: '这是一个根组件'
       }
     },
-    methods: {
-      eventFn(e) {
-        e.srcElement.style.background='red';
-        alert(e.srcElement.dataset.aid);
-      },
+    // 注册组件
+    components: {
+      'v-home': Home,
+      'v-news': News,
     }
   }
 </script>
