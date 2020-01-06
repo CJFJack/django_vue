@@ -1,18 +1,30 @@
 <template>
-  <div id="header">
-    <h1 class="header">这是一个头部组件</h1>
+  <div id="app">
+    <h2>{{msg}}</h2>
+    <button @click="getParent()">获取父组件的数据和方法</button>
   </div>
 </template>
 
 <script>
-    export default {
-        name: "Header"
-    }
+  export default {
+    name: "Header",
+    data() {
+      return {
+        msg: '我是头部组件',
+      }
+    },
+    methods: {
+      run() {
+        alert('我是子组件的run方法')
+      },
+      getParent() {
+        alert(this.$parent.msg);
+        this.$parent.run()
+      }
+    },
+  }
 </script>
 
 <style scoped>
-.header{
-  background: #000;
-  color: #fff
-}
+
 </style>

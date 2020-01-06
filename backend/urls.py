@@ -5,4 +5,5 @@ from django.conf.urls import url
 
 urlpatterns = [
     url(r'^index/$', index, name='index'),
+    url(r'^test/$', test_vue_resource_post, name='test_vue_resource_post'),
 ]
