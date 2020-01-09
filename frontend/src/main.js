@@ -1,28 +1,17 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueResource from 'vue-resource'
-// 引用vue-router
-import VueRouter from 'vue-router'
 
 Vue.use(VueResource);
-// 使用VueRouter
-Vue.use(VueRouter);
+// import './assets/css/basic.css'
 
-// 引用组件
-import Home from './components/Home.vue'
-import News from './components/News.vue'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
-// 定义路由
-const routes = [
-  {path: '/home', component: Home},
-  {path: '/news', component: News},
-  {path: '*', redirect: '/home'}   /*默认跳转路由*/
-];
+Vue.use(ElementUI);
 
-// 实例化路由
-const router = new VueRouter({
-  routes // （缩写）相当于 routes: routes
-});
+// 引入路由模块
+import router from './router/router.js'
 
 new Vue({
   el: '#app',
