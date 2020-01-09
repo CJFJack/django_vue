@@ -121,8 +121,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, STATIC_URL),
-    'frontend/'
+    os.path.join(BASE_DIR, 'frontend/'),
 ]
 
 CORS_ALLOW_CREDENTIALS = True
